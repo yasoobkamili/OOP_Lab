@@ -8,6 +8,7 @@ void add(int mat1[10][10], int mat2[10][10], int rows, int columns);
 void subtract(int mat1[10][10], int mat2[10][10], int rows, int columns);
 void multiply(int mat1[10][10], int mat2[10][10], int rows_1, int columns_1, int columns_2);
 void transpose(int matrix[10][10], int rows, int columns );
+
 int main(){
     
     int mat1[10][10],m,n;
@@ -46,11 +47,11 @@ int main(){
                     printf("Given matrices cannot be subtracted due to different orders.\n");
                 break;
             case 3:
-				if(n==p)
-                	multiply(mat1,mat2,m,n,q);
+		if(n==p)
+                    multiply(mat1,mat2,m,n,q);
                 else
-					printf("Given matrices cannot be multiplied");
-				break;
+		    printf("Given matrices cannot be multiplied");
+	    break;
             case 4:
                 printf("Transpose is first matrix is:\n");
                 transpose(mat1,m,n);
@@ -64,6 +65,7 @@ int main(){
     }
     
 }
+
 
 void create(int matrix[10][10] , int rows, int columns){
     int i,j;
@@ -122,16 +124,16 @@ void transpose(int matrix[10][10], int rows, int columns ){
 
 void multiply(int mat1[10][10], int mat2[10][10], int rows_1, int columns_1, int columns_2){
     int i, j, k, sum = 0;
-	int mat_mul[10][10] = {0};
-	for(i=0;i<rows_1;i++){
-		for(j=0;j<columns_2;j++){
-			for(k=0;k<columns_1;k++){
-				mat_mul[i][j]  += mat1[i][k]*mat2[k][j];
-			}
-		}	
-	}
+    int mat_mul[10][10] = {0};
+    for(i=0;i<rows_1;i++){
+	for(j=0;j<columns_2;j++){
+	    for(k=0;k<columns_1;k++){
+		mat_mul[i][j]  += mat1[i][k]*mat2[k][j];
+    	    }
+	}	
+    }
     printf("Product of matrices is:\n");
-	display(mat_mul, rows_1, columns_2);
+    display(mat_mul, rows_1, columns_2);
 }
 
 
